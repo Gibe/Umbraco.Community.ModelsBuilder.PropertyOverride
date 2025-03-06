@@ -4,7 +4,7 @@
 [![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.ModelsBuilder.PropertyOverride?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.ModelsBuilder.PropertyOverride)
 [![GitHub license](https://img.shields.io/github/license/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride?color=8AB803)](../LICENSE)
 
-This package provides functionality for overriding Models Builder property implementations.
+This package re-introduces functionality for overriding Models Builder property implementations that was lost in v9+.
 
 Umbraco versions 13.x - 15.x are supported.
 
