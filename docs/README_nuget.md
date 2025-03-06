@@ -12,15 +12,44 @@ Properties can be marked up with a re-implemented [ImplementPropertyType("alias"
 
 In addition, classes can be marked up with [ImplementAllPropertyTypes], which causes all properties on the class to be ignored, this is functionally equivalent to adding [ImplementPropertyType("alias")] to every property on the class.
 
+Legacy (8.x) documentation for the [ImplementPropertyType("alias")] attribute can be found [here](https://our.umbraco.com/Documentation/Reference/Templating/Modelsbuilder/Control-Generation-vpre8_5#implement-property-type).
+
 ## Examples
 
 [ImplementPropertyType("alias")] to ignore properties on an individual basis:
 
-<img alt="ImplementPropertyType" src="https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride/blob/develop/docs/screenshots/implement-property-type.png">
+```
+using Umbraco.Cms.Infrastructure.ModelsBuilder;
+
+namespace ModelsBuilder.PropertyOverride.TestSite.Models
+{
+    public partial class Home
+    {
+        [ImplementPropertyType("content")]
+        public global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Content => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "content");
+
+        [ImplementPropertyType("title")]
+        public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
+    }
+}
+```
 
 [ImplementAllPropertyTypes] to ignore all properties:
 
-<img alt="ImplementAllPropertyTypes" src="https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride/blob/develop/docs/screenshots/implement-all-property-types.png">
+```
+using Umbraco.Cms.Infrastructure.ModelsBuilder;
+
+namespace ModelsBuilder.PropertyOverride.TestSite.Models
+{
+    [ImplementAllPropertyTypes]
+    public partial class HomePageBlock 
+    {
+        public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Image { get; set; }
+        public virtual string SubTitle { get; set; }
+        public virtual string Title { get; set; }
+    }
+}
+```
 
 ## Installation
 
