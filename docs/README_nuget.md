@@ -1,18 +1,18 @@
-# Models Builder .Property Override 
+# Umbraco.Community.ModelsBuilder.PropertyOverride 
 
 [![Downloads](https://img.shields.io/nuget/dt/Umbraco.Community.ModelsBuilder.PropertyOverride?color=cc9900)](https://www.nuget.org/packages/Umbraco.Community.ModelsBuilder.PropertyOverride/)
 [![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.ModelsBuilder.PropertyOverride?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.ModelsBuilder.PropertyOverride)
 [![GitHub license](https://img.shields.io/github/license/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride?color=8AB803)](../LICENSE)
 
-This package provides functionality for overriding Models Builder property implementations.
+This package re-introduces functionality for overriding ModelsBuilder property implementations that was lost in Umbraco 9+.
 
 Umbraco versions 13.x - 15.x are supported.
 
-Properties can be marked up with a re-implemented `[ImplementPropertyType("alias")]` attribute, which causes them to be ignored when generating models through the default Models Builder.
+Properties can be marked up with a re-implemented `[ImplementPropertyType("alias")]` attribute, which causes them to be ignored when generating models through the default ModelsBuilder.
 
 In addition, classes can be marked up with `[ImplementAllPropertyTypes]`, which causes all properties on the class to be ignored, this is functionally equivalent to adding `[ImplementPropertyType("alias")]` to every property on the class.
 
-Legacy (8.x) documentation for the `[ImplementPropertyType("alias")]` attribute can be found [here](https://our.umbraco.com/Documentation/Reference/Templating/Modelsbuilder/Control-Generation-vpre8_5#implement-property-type).
+Legacy (Umbraco 8.x) documentation for the `[ImplementPropertyType("alias")]` attribute can be found [here](https://our.umbraco.com/Documentation/Reference/Templating/Modelsbuilder/Control-Generation-vpre8_5#implement-property-type).
 
 ## Examples
 
@@ -53,7 +53,7 @@ namespace ModelsBuilder.PropertyOverride.TestSite.Models
 
 ## Installation
 
-Add the package to an existing Umbraco website (v13+) from nuget:
+Add the package to an existing Umbraco website (Umbraco 13+) from nuget:
 
 `dotnet add package Umbraco.Community.ModelsBuilder.PropertyOverride`
 
