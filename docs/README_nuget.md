@@ -8,15 +8,15 @@ This package provides functionality for overriding Models Builder property imple
 
 Umbraco versions 13.x - 15.x are supported.
 
-Properties can be marked up with a re-implemented [ImplementPropertyType("alias")] attribute, which causes them to be ignored when generating models through the default Models Builder.
+Properties can be marked up with a re-implemented `[ImplementPropertyType("alias")]` attribute, which causes them to be ignored when generating models through the default Models Builder.
 
-In addition, classes can be marked up with [ImplementAllPropertyTypes], which causes all properties on the class to be ignored, this is functionally equivalent to adding [ImplementPropertyType("alias")] to every property on the class.
+In addition, classes can be marked up with `[ImplementAllPropertyTypes]`, which causes all properties on the class to be ignored, this is functionally equivalent to adding `[ImplementPropertyType("alias")]` to every property on the class.
 
-Legacy (8.x) documentation for the [ImplementPropertyType("alias")] attribute can be found [here](https://our.umbraco.com/Documentation/Reference/Templating/Modelsbuilder/Control-Generation-vpre8_5#implement-property-type).
+Legacy (8.x) documentation for the `[ImplementPropertyType("alias")]` attribute can be found [here](https://our.umbraco.com/Documentation/Reference/Templating/Modelsbuilder/Control-Generation-vpre8_5#implement-property-type).
 
 ## Examples
 
-[ImplementPropertyType("alias")] to ignore properties on an individual basis:
+`[ImplementPropertyType("alias")]` to ignore properties on an individual basis:
 
 ```
 using Umbraco.Cms.Infrastructure.ModelsBuilder;
@@ -34,7 +34,7 @@ namespace ModelsBuilder.PropertyOverride.TestSite.Models
 }
 ```
 
-[ImplementAllPropertyTypes] to ignore all properties:
+`[ImplementAllPropertyTypes]` to ignore all properties:
 
 ```
 using Umbraco.Cms.Infrastructure.ModelsBuilder;
