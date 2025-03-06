@@ -6,7 +6,7 @@
 
 This package re-introduces functionality for overriding ModelsBuilder property implementations that was lost in Umbraco 9+.
 
-Umbraco versions 13.x - 15.x are supported.
+Umbraco versions 13.x are supported.
 
 Properties can be marked up with a re-implemented `[ImplementPropertyType("alias")]` attribute, which causes them to be ignored when generating models through the default ModelsBuilder.
 
@@ -63,4 +63,4 @@ Contributions to this package are most welcome!
 
 ## Acknowledgments
 
-[tristanjthompson](https://github.com/tristanjthompson) & [zade107](http://github/zade107)
+[tristanjthompson](https://github.com/tristanjthompson) & [zade107](http://github.com/zade107)
