@@ -56,7 +56,6 @@ namespace ModelsBuilder.PropertyOverride.TestSite
                 })
                 .WithEndpoints(u =>
                 {
-                    u.UseInstallerEndpoints();
                     u.UseBackOfficeEndpoints();
                     u.UseWebsiteEndpoints();
                 });
