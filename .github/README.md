@@ -4,15 +4,23 @@
 [![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.ModelsBuilder.PropertyOverride?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.ModelsBuilder.PropertyOverride)
 [![GitHub license](https://img.shields.io/github/license/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride?color=8AB803)](../LICENSE)
 
-TODO: describe your package
+This package provides functionality for overriding Models Builder property implementations.
 
-<!--
-Including screenshots is a really good idea! 
+Umbraco versions 13.x - 15.x are supported.
 
-If you put images into /docs/screenshots, then you would reference them in this readme as, for example:
+Properties can be marked up with a re-implemented [ImplementPropertyType("alias")] attribute, which causes them to be ignored when generating models through the default Models Builder.
 
-<img alt="..." src="https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride/blob/develop/docs/screenshots/screenshot.png">
--->
+In addition, classes can be marked up with [ImplementAllPropertyTypes], which causes all properties on the class to be ignored, this is functionally equivalent to adding [ImplementPropertyType("alias")] to every property on the class.
+
+## Examples
+
+[ImplementPropertyType("alias")] to ignore properties on an individual basis:
+
+<img alt="ImplementPropertyType" src="https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride/blob/develop/docs/screenshots/implement-property-type.png">
+
+[ImplementAllPropertyTypes] to ignore all properties:
+
+<img alt="ImplementAllPropertyTypes" src="https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride/blob/develop/docs/screenshots/implement-all-property-types.png">
 
 ## Installation
 
@@ -20,12 +28,10 @@ Add the package to an existing Umbraco website (v13+) from nuget:
 
 `dotnet add package Umbraco.Community.ModelsBuilder.PropertyOverride`
 
-TODO *provide any other instructions for someone using your package*
-
 ## Contributing
 
-Contributions to this package are most welcome! Please read the [Contributing Guidelines](CONTRIBUTING.md).
+Contributions to this package are most welcome!
 
 ## Acknowledgments
 
-TODO
+[tristanjthompson](https://github.com/tristanjthompson) & [zade107](http://github/zade107)
