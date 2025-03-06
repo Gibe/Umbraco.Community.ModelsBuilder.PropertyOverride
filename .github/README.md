@@ -16,11 +16,11 @@ In addition, classes can be marked up with [ImplementAllPropertyTypes], which ca
 
 [ImplementPropertyType("alias")] to ignore properties on an individual basis:
 
-<img alt="ImplementPropertyType" src="https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride/blob/develop/docs/screenshots/implement-property-type.png">
+![ImplementPropertyType](docs/screenshots/implement-property-type.png)
 
 [ImplementAllPropertyTypes] to ignore all properties:
 
-<img alt="ImplementAllPropertyTypes" src="https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride/blob/develop/docs/screenshots/implement-all-property-types.png">
+![ImplementAllPropertyTypes](docs/screenshots/implement-all-property-types.png)
 
 ## Installation
 
