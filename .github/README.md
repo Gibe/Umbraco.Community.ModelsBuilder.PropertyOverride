@@ -63,4 +63,4 @@ Contributions to this package are most welcome!
 
 ## Acknowledgments
 
-[tristanjthompson](https://github.com/tristanjthompson) & [zade107](http://github/zade107)
+[tristanjthompson](https://github.com/tristanjthompson) & [zade107](http://github.com/zade107)
