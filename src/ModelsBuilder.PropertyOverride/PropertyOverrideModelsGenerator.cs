@@ -1,3 +1,4 @@
+using System.CodeDom.Compiler;
 using System.Reflection;
 using System.Text;
 using Microsoft.Extensions.Options;
@@ -5,7 +6,6 @@ using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Infrastructure.ModelsBuilder.Building;
-using Umbraco.Community.ModelsBuilder.PropertyOverride.Attributes;
 using Umbraco.Extensions;
 using File = System.IO.File;
 
@@ -45,7 +45,7 @@ namespace Umbraco.Community.ModelsBuilder.PropertyOverride
             IList<TypeModel> typeModels = _umbracoService.GetAllTypes();
 
             // This is the custom bit
-            typeModels = FilterForPropertyOverrides(typeModels);
+            typeModels = FilterForImplementedProperties(typeModels);
 
             var builder = new TextBuilder(_config, typeModels);
 
@@ -77,7 +77,7 @@ namespace Umbraco.Community.ModelsBuilder.PropertyOverride
         /// </summary>
         /// <param name="typeModels"></param>
         /// <returns></returns>
-        private IList<TypeModel> FilterForPropertyOverrides(IList<TypeModel> typeModels)
+        private IList<TypeModel> FilterForImplementedProperties(IList<TypeModel> typeModels)
         {
             foreach (var model in typeModels)
             {
@@ -95,7 +95,8 @@ namespace Umbraco.Community.ModelsBuilder.PropertyOverride
 
                 var aliasOverrides = underlyingType
                         .GetProperties()
-                        .Select(propertyInfo => new { Property = propertyInfo, Attr = propertyInfo.GetCustomAttribute<PropertyOverrideAttribute>(inherit: true) })
+                        .Where(propertyInfo => propertyInfo.GetCustomAttribute<GeneratedCodeAttribute>(inherit: true) is null)
+                        .Select(propertyInfo => new { Property = propertyInfo, Attr = propertyInfo.GetCustomAttribute<ImplementPropertyTypeAttribute>(inherit: true) })
                         .Where(x => x.Attr != null && !string.IsNullOrWhiteSpace(x.Attr.Alias))
                         .Select(x => x.Attr!.Alias)
                         .ToHashSet(StringComparer.OrdinalIgnoreCase);
@@ -112,7 +113,7 @@ namespace Umbraco.Community.ModelsBuilder.PropertyOverride
                     var propertyInfo = underlyingType.GetProperty(property.ClrName);
                     if (propertyInfo != null)
                     {
-                        var attr = propertyInfo.GetCustomAttribute<PropertyOverrideAttribute>(inherit: true);
+                        var attr = propertyInfo.GetCustomAttribute<ImplementPropertyTypeAttribute>(inherit: true);
                         if (attr != null && string.IsNullOrWhiteSpace(attr.Alias))
                         {
                             propertiesToRemove.Add(property);
