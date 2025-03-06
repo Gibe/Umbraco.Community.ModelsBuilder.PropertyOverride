@@ -3,11 +3,11 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace Umbraco.Community.ModelsBuilder.PropertyOverride
 {
-    internal class ModelsBuilder.PropertyOverrideComposer : IComposer
+    internal class Composer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.ManifestFilters().Append<ModelsBuilder.PropertyOverrideManifestFilter>();
+            
         }
     }
 }
