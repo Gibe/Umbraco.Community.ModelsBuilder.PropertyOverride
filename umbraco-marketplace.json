@@ -1,0 +1,14 @@
+{
+    "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json", 
+    "AuthorDetails": {
+      "Name": "Gibe Digital",
+      "ImageUrl": "https://github.com/Gibe.png"
+    },
+    "Category": "",
+    "Description": "",
+    "LicenseTypes": [ "Free" ],
+    "IssueTrackerUrl": "https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride/issues",
+    "PackageType": "Package",
+    "Tags": [],
+    "Title": "ModelsBuilder Property Override"
+  }
