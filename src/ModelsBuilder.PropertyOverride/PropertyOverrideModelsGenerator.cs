@@ -93,6 +93,12 @@ namespace Umbraco.Community.ModelsBuilder.PropertyOverride
                     continue;
                 }
 
+                if (underlyingType.GetCustomAttribute<ImplementAllPropertyTypesAttribute>(inherit: true) is not null)
+                {
+                    model.Properties.Clear();
+                    continue;
+                }
+
                 var aliasOverrides = underlyingType
                         .GetProperties()
                         .Where(propertyInfo => propertyInfo.GetCustomAttribute<GeneratedCodeAttribute>(inherit: true) is null)
