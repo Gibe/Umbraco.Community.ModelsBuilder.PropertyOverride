@@ -1,14 +1,15 @@
 {
-    "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json", 
-    "AuthorDetails": {
-      "Name": "Gibe Digital",
-      "ImageUrl": "https://github.com/Gibe.png"
-    },
-    "Category": "",
-    "Description": "",
-    "LicenseTypes": [ "Free" ],
-    "IssueTrackerUrl": "https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride/issues",
-    "PackageType": "Package",
-    "Tags": [],
-    "Title": "ModelsBuilder Property Override"
-  }
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "AuthorDetails": {
+    "Name": "Gibe Digital",
+    "Url": "https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride",
+    "ImageUrl": "https://github.com/Gibe.png",
+    "SyncContributorsFromRepository": true
+  },
+  "Description": "Re-implementation of the ImplementPropertyType functionality to tell ModelsBuilder not to generate properties.",
+  "DocumentationUrl": "https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride",
+  "IssueTrackerUrl": "https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride/issues",
+  "PackageType": "Package",
+  "Category": "Developer Tools",
+  "Tags": [ "modelsbuilder", "backoffice" ]
+}
