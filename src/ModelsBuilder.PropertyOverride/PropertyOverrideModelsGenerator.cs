@@ -1,26 +1,26 @@
 using System.CodeDom.Compiler;
 using System.Reflection;
 using System.Text;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
-using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Infrastructure.ModelsBuilder.Building;
-using Umbraco.Extensions;
 using File = System.IO.File;
 
 namespace Umbraco.Community.ModelsBuilder.PropertyOverride
 {
     public class PropertyOverrideModelsGenerator : IModelsGenerator
     {
-        private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IHostEnvironment _hostingEnvironment;
         private readonly OutOfDateModelsStatus _outOfDateModels;
         private readonly UmbracoServices _umbracoService;
         private ModelsBuilderSettings _config;
+
         public PropertyOverrideModelsGenerator(UmbracoServices umbracoService,
             IOptionsMonitor<ModelsBuilderSettings> config,
             OutOfDateModelsStatus outOfDateModels,
-            IHostingEnvironment hostingEnvironment)
+            IHostEnvironment hostingEnvironment)
         {
             _umbracoService = umbracoService;
             _config = config.CurrentValue;
