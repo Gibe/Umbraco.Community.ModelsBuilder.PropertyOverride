@@ -12,7 +12,7 @@
     <PackageTags>umbraco;umbraco-marketplace</PackageTags>
     <RootNamespace>Umbraco.Community.ModelsBuilder.PropertyOverride</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>15.0.1</Version>
+    <Version>15.0.2</Version>
     <Authors>Gibe Digital</Authors>
     <Copyright>$([System.DateTime]::UtcNow.ToString(`yyyy`)) © Gibe Digital</Copyright>
     <PackageProjectUrl>https://github.com/Gibe/Umbraco.Community.ModelsBuilder.PropertyOverride</PackageProjectUrl>
