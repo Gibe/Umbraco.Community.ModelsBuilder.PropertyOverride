@@ -6,7 +6,7 @@
 
 This package re-introduces functionality for overriding ModelsBuilder property implementations that was lost in Umbraco 9+.
 
-Umbraco versions 15.x are supported.
+Umbraco versions 17.x are supported.
 
 Properties can be marked up with a re-implemented `[ImplementPropertyType("alias")]` attribute, which causes them to be ignored when generating models through the default ModelsBuilder.
 
@@ -53,7 +53,7 @@ namespace ModelsBuilder.PropertyOverride.TestSite.Models
 
 ## Installation
 
-Add the package to an existing Umbraco website (Umbraco 15.x) from nuget:
+Add the package to an existing Umbraco website (Umbraco 17.x) from nuget:
 
 `dotnet add package Umbraco.Community.ModelsBuilder.PropertyOverride`
 
